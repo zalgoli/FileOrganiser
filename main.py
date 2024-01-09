@@ -1,5 +1,6 @@
 import os
 import shutil
+import argparse
 
 def organise_files(input_folder):
 
@@ -29,6 +30,12 @@ def organise_files(input_folder):
         for extension, files in file_dict.items():
             print(f"{extension.upper()} folder: {len(files)} files")
 
+def main():
+    parser = argparse.ArgumentParser(description= "Organise files into different folders based on extensions")
+    parser.add_argument("input_folder", help= "Path of the folder to organise")
+
+    args = parser.parse_args()
+    organise_files(args.input_folder)
+
 if __name__ == "__main__":
-    input_folder = input("Enter the path of the file to organise: ")
-    organise_files(input_folder)
+    main()
