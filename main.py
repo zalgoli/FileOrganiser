@@ -32,7 +32,7 @@ def organise_files(input_folder):
 
 def main():
     parser = argparse.ArgumentParser(description= "Organise files into different folders based on extensions")
-    parser.add_argument("input_folder", help= "Path of the folder to organise")
+    parser.add_argument("input_folder", help= "Path of the folder to organise: ")
 
     args = parser.parse_args()
     organise_files(args.input_folder)
